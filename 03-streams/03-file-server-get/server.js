@@ -14,7 +14,6 @@ server.on('request', (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = url.pathname.slice(1);
 
-
   switch (req.method) {
     case 'GET':
       if (pathname.includes('/')) {
