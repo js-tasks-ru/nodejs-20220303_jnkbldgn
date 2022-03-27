@@ -9,7 +9,6 @@ const {constants: {
   HTTP_STATUS_PAYLOAD_TOO_LARGE,
   HTTP_STATUS_CONFLICT,
 }} = require('http2');
-
 const LimitSizeStream = require('./LimitSizeStream');
 
 const server = new http.Server();
@@ -17,7 +16,6 @@ const server = new http.Server();
 server.on('request', (req, res) => {
   const url = new URL(req.url, `http://${req.headers.host}`);
   const pathname = url.pathname.slice(1);
-
 
   switch (req.method) {
     case 'POST':
